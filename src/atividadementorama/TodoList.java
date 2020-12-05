@@ -16,6 +16,8 @@ public class TodoList {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Menu menu = new Menu();
+        System.out.println(menu.imprimirMenu()); 
     }
     
 }
