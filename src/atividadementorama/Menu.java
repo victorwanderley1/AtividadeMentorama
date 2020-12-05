@@ -12,13 +12,13 @@ import java.util.Scanner;
  * @author Victor-Vanessa
  */
 public class Menu {
-    public void imprimirMenu(){
-        System.out.println("Bem vindo ao To Do List");
-        System.out.println("Escolha qual opção deseja:");
-        System.out.println("1) Visualizar Categorias");
-        System.out.println("2) Adicionar Categoria");
-        System.out.println("3) Excluir Categoria");
-        System.out.println("0) Sair do Programa\n");
+    public String imprimirMenu(){
+        return "Bem vindo ao To Do List"
+                + "\nEscolha qual opção deseja:"
+                + "\n1) Visualizar Categorias"
+                + "\n2) Adicionar Categoria"
+                + "\n3) Excluir Categoria;"
+                + "\n0) Sair do Programa\n";
     }
     public int escolhaMenu(){
         int escolha = 0;
