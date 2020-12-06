@@ -19,8 +19,9 @@ public class TodoList {
         // TODO code application logic here
         Menu menu = new Menu();
         EditarLista editarCategorias = new EditarLista();
-        System.out.println(menu.imprimirMenu());
         List<String> listaCategorias = new ArrayList();
+        while (true){
+        System.out.println(menu.imprimirMenu());
         int escolha = menu.escolhaMenu();
         switch (escolha){
             case 1:
@@ -33,6 +34,9 @@ public class TodoList {
                     System.err.println("Erro gerado: "+e);
                 }
         }
-        System.out.println(listaCategorias);
+        for (String categorias: listaCategorias){
+             System.out.println(categorias);
+        }
+      }
     }
 }

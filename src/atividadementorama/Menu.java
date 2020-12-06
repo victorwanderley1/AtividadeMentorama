@@ -25,10 +25,12 @@ public class Menu {
         try{
             Scanner entrada = new Scanner(System.in);
             escolha = entrada.nextInt();
-            entrada.close();
         }catch(Exception e){
             System.err.println(e);
         }
         return escolha;
+    }
+    public String menuAdicionarTarefa(){
+        return "Digite o nome da categoria a ser adicionada";
     }
 }
