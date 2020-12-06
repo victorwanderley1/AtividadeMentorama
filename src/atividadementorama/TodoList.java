@@ -5,19 +5,34 @@
  */
 package atividadementorama;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author Victor-Vanessa
  */
 public class TodoList {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         Menu menu = new Menu();
-        System.out.println(menu.imprimirMenu()); 
+        EditarLista editarCategorias = new EditarLista();
+        System.out.println(menu.imprimirMenu());
+        List<String> listaCategorias = new ArrayList();
+        int escolha = menu.escolhaMenu();
+        switch (escolha){
+            case 1:
+                System.out.println(menu.menuAdicionarTarefa());
+                try{
+                    Scanner entrada = new Scanner(System.in);
+                    String nomeCategoria = entrada.next();
+                    editarCategorias.adicionarCategoria(listaCategorias, nomeCategoria);
+                }catch(NullPointerException e){
+                    System.err.println("Erro gerado: "+e);
+                }
+        }
+        System.out.println(listaCategorias);
     }
-    
 }
