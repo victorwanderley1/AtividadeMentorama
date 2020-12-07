@@ -18,7 +18,6 @@ public class TodoList {
     public static void main(String[] args) {
         // TODO code application logic here
         Menu menu = new Menu();
-        EditarLista editarCategorias = new EditarLista();
         List<String> listaCategorias = new ArrayList();
         
         while (true){
@@ -35,7 +34,7 @@ public class TodoList {
                       System.err.println("Erro gerado: "+e);
                     }
                 case 2:
-                    
+                    System.out.println(menu.menuRemoverTarefa());
             }
         }
     }

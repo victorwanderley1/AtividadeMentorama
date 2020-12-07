@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atividadementorama;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -32,5 +28,8 @@ public class Menu {
     }
     public String menuAdicionarTarefa(){
         return "Digite o nome da categoria a ser adicionada";
+    }
+    public String menuRemoverTarefa(){
+        return "Digite o número da tarefa desseja excluir: ";
     }
 }
