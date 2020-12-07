@@ -30,10 +30,12 @@ public class TodoList {
                   try{
                       Scanner entrada = new Scanner(System.in);
                       String nomeCategoria = entrada.next();
-                      editarCategorias.adicionarCategoria(listaCategorias, nomeCategoria);
+                      listaCategorias.add(nomeCategoria);
                     }catch(NullPointerException e){
                       System.err.println("Erro gerado: "+e);
                     }
+                case 2:
+                    
             }
         }
     }
