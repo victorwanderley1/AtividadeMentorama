@@ -19,12 +19,15 @@ public class TodoList {
         // TODO code application logic here
         Menu menu = new Menu();
         List<String> listaCategorias = new ArrayList();
-        
+        TodoList todoList = new TodoList();
         while (true){
         System.out.println(menu.imprimirMenu());
         int escolha = menu.escolhaMenu();
             switch (escolha){
                 case 1:
+                    System.out.println("Categorias:");
+                    todoList.imprimirLista(listaCategorias);
+                case 2:
                   System.out.println(menu.menuAdicionarTarefa());
                   try{
                       Scanner entrada = new Scanner(System.in);
@@ -33,9 +36,20 @@ public class TodoList {
                     }catch(NullPointerException e){
                       System.err.println("Erro gerado: "+e);
                     }
-                case 2:
+                case 3:
                     System.out.println(menu.menuRemoverTarefa());
+                    todoList.imprimirLista(listaCategorias);
             }
+        }
+    }
+    public void imprimirLista(List<String> lista){
+        try{
+            int posicao = 0;
+            for (String nomesNaLista: lista){
+                System.out.println(++posicao + " "  + nomesNaLista);
+            }
+        }catch (NullPointerException e){
+            System.out.println("Lista Vazia: Erro "+e);
         }
     }
 }
