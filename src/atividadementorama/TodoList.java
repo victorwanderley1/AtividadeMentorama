@@ -20,23 +20,21 @@ public class TodoList {
         Menu menu = new Menu();
         EditarLista editarCategorias = new EditarLista();
         List<String> listaCategorias = new ArrayList();
+        
         while (true){
         System.out.println(menu.imprimirMenu());
         int escolha = menu.escolhaMenu();
-        switch (escolha){
-            case 1:
-                System.out.println(menu.menuAdicionarTarefa());
-                try{
-                    Scanner entrada = new Scanner(System.in);
-                    String nomeCategoria = entrada.next();
-                    editarCategorias.adicionarCategoria(listaCategorias, nomeCategoria);
-                }catch(NullPointerException e){
-                    System.err.println("Erro gerado: "+e);
-                }
+            switch (escolha){
+                case 1:
+                  System.out.println(menu.menuAdicionarTarefa());
+                  try{
+                      Scanner entrada = new Scanner(System.in);
+                      String nomeCategoria = entrada.next();
+                      editarCategorias.adicionarCategoria(listaCategorias, nomeCategoria);
+                    }catch(NullPointerException e){
+                      System.err.println("Erro gerado: "+e);
+                    }
+            }
         }
-        for (String categorias: listaCategorias){
-             System.out.println(categorias);
-        }
-      }
     }
 }
