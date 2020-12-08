@@ -25,8 +25,13 @@ public class TodoList {
         int escolha = menu.escolhaMenu();
             switch (escolha){
                 case 1:
-                    System.out.println("Categorias:");
-                    todoList.imprimirLista(listaCategorias);
+                    if (!listaCategorias.isEmpty()){
+                        System.out.println("\nCategorias:");
+                        todoList.imprimirLista(listaCategorias);  
+                    } else{
+                        System.out.println("\nLista vazia");
+                    }
+                    break;
                 case 2:
                   System.out.println(menu.menuAdicionarTarefa());
                   try{
@@ -34,22 +39,43 @@ public class TodoList {
                       String nomeCategoria = entrada.next();
                       listaCategorias.add(nomeCategoria);
                     }catch(NullPointerException e){
-                      System.err.println("Erro gerado: "+e);
+                      System.err.println("Erro gerado: " + e);
                     }
+                  break;
                 case 3:
-                    System.out.println(menu.menuRemoverTarefa());
-                    todoList.imprimirLista(listaCategorias);
+                    if (!listaCategorias.isEmpty()){
+                      System.out.println(menu.menuRemoverTarefa());
+                      todoList.imprimirLista(listaCategorias);
+                      try{
+                       Scanner entrada = new Scanner(System.in);
+                        int numeroDaCategoria = entrada.nextInt();
+                        listaCategorias.remove(numeroDaCategoria);
+                        }catch(NullPointerException e){
+                        System.err.println("Erro gerado: " + e);
+                        }catch(IndexOutOfBoundsException e){
+                            System.err.println("Erro gerado: " + e);
+                        }
+                    }
+                    break;
+                case 4:
+                    System.exit(0);
+                default:
+                    System.out.println("Opção inválida! Tente novamente!");
+                    break;
+                            
             }
         }
     }
     public void imprimirLista(List<String> lista){
+        System.out.println("");
         try{
             int posicao = 0;
             for (String nomesNaLista: lista){
                 System.out.println(++posicao + " "  + nomesNaLista);
             }
         }catch (NullPointerException e){
-            System.out.println("Lista Vazia: Erro "+e);
+            System.err.println("Lista Vazia: Erro "+e);
         }
+        System.out.println("");
     }
 }

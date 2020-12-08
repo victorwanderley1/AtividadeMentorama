@@ -27,9 +27,9 @@ public class Menu {
         return escolha;
     }
     public String menuAdicionarTarefa(){
-        return "Digite o nome da categoria a ser adicionada";
+        return "\nDigite o nome da categoria a ser adicionada";
     }
     public String menuRemoverTarefa(){
-        return "Digite o número da tarefa desseja excluir: ";
+        return "\nDigite o número da tarefa desseja excluir: ";
     }
 }
